@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace Task2
 {
@@ -13,7 +8,7 @@ namespace Task2
         int[] day = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
         int position = -1;
-        
+
         public object Current
         {
             get { return month[position] + "---" + day[position]; }
@@ -40,14 +35,26 @@ namespace Task2
             position = -1;
         }
 
-        public string GetMonthByNumber (int number)
+        public string GetMonthByNumber(int number)
         {
             if (number < month.Length)
             {
-                return string.Format($"Month number {number} ---  Days in this month {day[number - 1]}");   
-            }else return "no such month"
-                
+                return string.Format($"Month number {number} ---  Days in this month {day[number - 1]}");
+            }
+            else return "no such month";
         }
-        
+
+        public string GetMonthByDaysCount(int count)
+        {
+            string result = string.Empty;
+            for (int i = 0; i < day.Length; i++)
+            {
+                if (count == day[i])
+                {
+                    result += month[i] + "---" + day[i] + "\n";
+                }
+            }
+            return result;
+        }
     }
 }

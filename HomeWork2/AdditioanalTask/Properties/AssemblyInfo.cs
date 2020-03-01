@@ -1,14 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("proffesionalHW1")]
+[assembly: AssemblyTitle("AdditioanalTask")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("proffesionalHW1")]
+[assembly: AssemblyProduct("AdditioanalTask")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5b9f4c35-6ae6-45f5-b00f-5d198003e97a")]
+[assembly: Guid("73a897fa-0142-441b-a235-5e8b42c1791e")]
 
 // Version information for an assembly consists of the following four values:
 //

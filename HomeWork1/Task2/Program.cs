@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task2
 {
@@ -10,6 +6,16 @@ namespace Task2
     {
         static void Main(string[] args)
         {
+            Months months = new Months();
+            foreach (var item in months)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+            Console.WriteLine(months.GetMonthByNumber(DateTime.Now.Month));
+            Console.WriteLine();
+            Console.WriteLine(months.GetMonthByDaysCount(31));
+
         }
     }
 }

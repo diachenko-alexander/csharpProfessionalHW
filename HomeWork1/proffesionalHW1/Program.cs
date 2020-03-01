@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace proffesionalHW1
 {
     class Program
     {
         //With yield
-        public IEnumerable<int> SomeMethod (int [] array)
+        public IEnumerable<int> SomeMethod(int[] array)
         {
             var result = array.Where(e => e % 2 != 0);
             foreach (var item in result)
@@ -25,7 +22,7 @@ namespace proffesionalHW1
 
         static void Main(string[] args)
         {
-            
+
         }
     }
 }
