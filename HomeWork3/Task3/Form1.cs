@@ -21,41 +21,67 @@ namespace Task3
 
         string searchedFile;
         
-
-        private bool SearchFile (string fileName)
+        private List<string> GetDrives()
         {
+            List <string> list = new List<string>();
             DriveInfo[] drives = DriveInfo.GetDrives();
             foreach (var drive in drives)
             {
-                if (drive.Name.Equals(@"C:\"))
+                list.Add(string.Format(drive.RootDirectory.FullName));
+            }
+
+            return list;
+        }
+
+
+        private bool SearchFile (string fileName, string directory)
+        {
+
+            DirectoryInfo dir = new DirectoryInfo(directory);
+
+            if (!dir.Exists)
+            {
+                return false;
+            }
+
+            FileInfo[] fileInfo = null;
+            try
+            {
+                fileInfo = dir.GetFiles(fileName);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            if (fileInfo.Length == 0)
+            {
+                DirectoryInfo[] dirInfo = dir.GetDirectories();
+
+                if (dirInfo.Length == 0)
                 {
-                    continue;
-                }               
-                string path = drive.RootDirectory.FullName;
-                var directoryes = new DirectoryInfo(path).GetDirectories();
-                
-                foreach (var directory in directoryes)
+                    return false;
+                }
+
+                foreach (var item in dirInfo)
                 {
-                    if (directory.Attributes.Equals(FileAttributes.System | FileAttributes.Hidden | FileAttributes.Directory))
+                    if (item.Attributes.Equals(FileAttributes.System | FileAttributes.Hidden | FileAttributes.Directory))
                     {
                         continue;
                     }
-                    FileInfo[] files = directory.GetFiles("*.*");
 
-                    foreach (var file in files)
+                    if (SearchFile(fileName, item.FullName))
                     {
-                        
-                        if (file.Name == fileName)
-                        {
-                            searchedFile = file.FullName;
-                            return true;
-                        }
+                        return true;
                     }
-
-                }              
-
+                }
+                return false;
             }
-            return false;
+            else
+            {
+                searchedFile = fileInfo[0].FullName;
+                return true;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -65,15 +91,19 @@ namespace Task3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            if (SearchFile(textBox1.Text))
+            var drives = GetDrives();
+            foreach (var drive in drives)
             {
-                richTextBox1.Text = searchedFile;
-            } else
-            {
-                searchedFile = null;
-                richTextBox1.Text = "No such file";
-            }
+                if (SearchFile(textBox1.Text, drive))
+                {
+                    richTextBox1.Text = searchedFile;
+                    break;
+                } else
+                {
+                    searchedFile = null;
+                    richTextBox1.Text = "No such file";
+                }
+            }          
         }
 
         private void button2_Click(object sender, EventArgs e)
