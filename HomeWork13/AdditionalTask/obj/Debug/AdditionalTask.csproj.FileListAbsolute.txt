@@ -1,0 +1,10 @@
+C:\Users\Alex\source\repos\csharpProfessionalHW\HomeWork13\AdditionalTask\bin\Debug\AdditionalTask.exe.config
+C:\Users\Alex\source\repos\csharpProfessionalHW\HomeWork13\AdditionalTask\bin\Debug\AdditionalTask.exe
+C:\Users\Alex\source\repos\csharpProfessionalHW\HomeWork13\AdditionalTask\bin\Debug\AdditionalTask.pdb
+C:\Users\Alex\source\repos\csharpProfessionalHW\HomeWork13\AdditionalTask\obj\Debug\AdditionalTask.csprojAssemblyReference.cache
+C:\Users\Alex\source\repos\csharpProfessionalHW\HomeWork13\AdditionalTask\obj\Debug\AdditionalTask.Form1.resources
+C:\Users\Alex\source\repos\csharpProfessionalHW\HomeWork13\AdditionalTask\obj\Debug\AdditionalTask.Properties.Resources.resources
+C:\Users\Alex\source\repos\csharpProfessionalHW\HomeWork13\AdditionalTask\obj\Debug\AdditionalTask.csproj.GenerateResource.cache
+C:\Users\Alex\source\repos\csharpProfessionalHW\HomeWork13\AdditionalTask\obj\Debug\AdditionalTask.csproj.CoreCompileInputs.cache
+C:\Users\Alex\source\repos\csharpProfessionalHW\HomeWork13\AdditionalTask\obj\Debug\AdditionalTask.exe
+C:\Users\Alex\source\repos\csharpProfessionalHW\HomeWork13\AdditionalTask\obj\Debug\AdditionalTask.pdb
